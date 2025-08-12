@@ -33,8 +33,20 @@ void Span::addNumber(int n)
 	}
 	else
 	{
-		throw std::runtime_error("addNumber(): vector is full");
+		throw std::runtime_error("addNumber(" + std::to_string(n) + "): vector is full");
 	}
+}
+
+void Span::addRange(std::vector<int>::iterator first, std::vector<int>::iterator last)
+{
+	unsigned int range = std::distance(first, last);
+
+	std::cout << "range: " << range << ", _numbers.size(): " << _numbers.size() << ", _max_size: " << _max_size << std::endl;
+	if (_numbers.size() + range > _max_size)
+	{
+		throw std::runtime_error("addRange: hitting limit (max_size) for the vector");
+	}
+	_numbers.insert(_numbers.end(), first, last);
 }
 
 int Span::shortestSpan() 
@@ -43,9 +55,11 @@ int Span::shortestSpan()
 	{
 		throw std::runtime_error("vector doesnt contain enough (> 2) values to calculate span");
 	}
-	int span = abs(_numbers.at(0) - _numbers.at(1));
-	int	temp = _numbers.at(1);
-	for (std::vector<int>::iterator it = _numbers.begin(); it != _numbers.end(); ++it)
+	std::vector<int> copy(_numbers);
+	std::sort(copy.begin(), copy.end());
+	int span = abs(copy.at(0) - copy.at(1));
+	int	temp = copy.at(1);
+	for (std::vector<int>::iterator it = copy.begin(); it != copy.end(); ++it)
 	{
 		if (abs(*it - temp) < span)
 		{
@@ -62,19 +76,7 @@ int Span::longestSpan()
 	{
 		throw std::runtime_error("vector doesnt contain enough (> 2) values to calculate span");
 	}
-	int	smallest = _numbers.at(0);
-	int biggest = _numbers.at(0);
-
-	for (std::vector<int>::iterator it = _numbers.begin(); it != _numbers.end(); ++it)
-	{
-		if (*it < smallest)
-		{
-			smallest = *it;
-		}
-		else if (*it > biggest)
-		{
-			biggest = *it;
-		}
-	}
+	int	smallest = *std::min_element(_numbers.begin(), _numbers.end());
+	int biggest = *std::max_element(_numbers.begin(), _numbers.end());
 	return (biggest - smallest);
 }
