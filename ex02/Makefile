@@ -4,7 +4,6 @@ NAME = mutant
 CPPFLAGS = -Wall -Werror -Wextra -std=c++11
 CPP = c++
 SOURCES = src/main.cpp \
-			src/MutantStack.cpp
 
 OBJDIR = obj
 OBJS = $(SOURCES:src/%.cpp=$(OBJDIR)/%.o)
