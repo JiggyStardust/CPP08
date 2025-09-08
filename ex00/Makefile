@@ -1,7 +1,7 @@
 
 
 NAME = easyfind
-CPPFLAGS = -Wall -Werror -Wextra -std=c++11
+CPPFLAGS = -Wall -Werror -Wextra
 CPP = c++
 SOURCES = src/main.cpp \
 
