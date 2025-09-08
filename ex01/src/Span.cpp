@@ -2,21 +2,21 @@
 
 Span::Span(unsigned int N) : _max_size(N)
 {
-	std::cout << "constructor " << std::endl;
+	// std::cout << "constructor " << std::endl;
 }
 Span::~Span()
 {
-	std::cout << "destructor " << std::endl;
+	// std::cout << "destructor " << std::endl;
 }
 
 Span::Span(const Span& orig) : _numbers(orig._numbers), _max_size(orig._max_size)
 {
-	std::cout << "copy constructor " << std::endl;
+	// std::cout << "copy constructor " << std::endl;
 }
 
 Span& Span::operator = (const Span& orig)
 {
-	std::cout << "copy assignment operator " << std::endl;
+	// std::cout << "copy assignment operator " << std::endl;
 	if (this != &orig)
 	{
 		_numbers = orig._numbers;

@@ -26,10 +26,9 @@ class MutantStack : public std::stack<T>
 		const_iterator cbegin() const;
 		const_iterator cend() const;
 		reverse_iterator rbegin();
-		const_reverse_iterator crbegin() const;
 		reverse_iterator rend();
+		const_reverse_iterator crbegin() const;
 		const_reverse_iterator crend() const;
-
 };
 
 #include "MutantStack.tpp"

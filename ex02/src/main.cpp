@@ -46,14 +46,6 @@ int main()
 		std::cout << *it << std::endl;
 		++it;
 	}
-	MutantStack<int> s(mstack);
-	std::cout << "\nconst_iterator for copy:\n";
-	MutantStack<int>::const_iterator ite = s.begin();
-	while (ite != s.end())
-	{
-		std::cout << *ite << std::endl;
-		++ite;
-	}
 
 	MutantStack<int> r(mstack);
 	std::cout << "\nreverse_iterator:\n";
@@ -63,6 +55,18 @@ int main()
 	{
 		std::cout << *rit << std::endl;
 		++rit;
+	}
+
+
+	std::cout << "\nCONST ITERATORS!\n";
+
+	const MutantStack<int> s(mstack);
+	std::cout << "\nconst_iterator for copy:\n";
+	MutantStack<int>::const_iterator ite = s.cbegin();
+	while (ite != s.cend())
+	{
+		std::cout << *ite << std::endl;
+		++ite;
 	}
 
 	std::cout << "\nconst_reverse_iterator:\n";

@@ -10,8 +10,7 @@ int main(void)
 	try {
 		easyfind(vec, 3);
 	}
-	catch (std::exception &e)
-	{
+	catch (std::exception &e){
 		std::cout << "Error: " << e.what() << std::endl;
 	}
 
@@ -21,8 +20,7 @@ int main(void)
 	try {
 		easyfind(vec, 5);
 	}
-	catch (std::exception &e)
-	{
+	catch (std::exception &e){
 		std::cout << "Error: " << e.what() << std::endl;
 	}
 
@@ -35,8 +33,7 @@ int main(void)
 	try {
 		easyfind(arr, 3);
 	}
-	catch (std::exception &e)
-	{
+	catch (std::exception &e){
 		std::cout << "Error: " << e.what() << std::endl;
 	}
 
@@ -47,8 +44,7 @@ int main(void)
 	try {
 		easyfind(arr2, 5);
 	}
-	catch (std::exception &e)
-	{
+	catch (std::exception &e){
 		std::cout << "Error: " << e.what() << std::endl;
 	}
 
@@ -61,8 +57,7 @@ int main(void)
 	try {
 		easyfind(deq, 3);
 	}
-	catch (std::exception &e)
-	{
+	catch (std::exception &e){
 		std::cout << "Error: " << e.what() << std::endl;
 	}
 
@@ -73,8 +68,7 @@ int main(void)
 	try {
 		easyfind(deq, 5);
 	}
-	catch (std::exception &e)
-	{
+	catch (std::exception &e){
 		std::cout << "Error: " << e.what() << std::endl;
 	}
 
@@ -87,8 +81,7 @@ int main(void)
 	try {
 		easyfind(lst, 3);
 	}
-	catch (std::exception &e)
-	{
+	catch (std::exception &e){
 		std::cout << "Error: " << e.what() << std::endl;
 	}
 
@@ -97,8 +90,7 @@ int main(void)
 	try {
 		easyfind(deq, 5);
 	}
-	catch (std::exception &e)
-	{
+	catch (std::exception &e){
 		std::cout << "Error: " << e.what() << std::endl;
 	}
 
